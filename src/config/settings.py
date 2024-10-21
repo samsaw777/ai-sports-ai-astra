@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings
 load_dotenv()
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "AI WIZARDS AUTOGEN SYSTEM"
+    PROJECT_NAME: str = "AI WIZARDS LANGGRAPH SYSTEM"
     DEBUG: bool = False
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY")
     MODEL_NAME: str = os.getenv("MODEL_NAME")
