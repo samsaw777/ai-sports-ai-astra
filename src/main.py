@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.api.routes import hello
+from src.api.routes import hello, sport
 from src.config.settings import get_settings
 
 
@@ -21,8 +21,8 @@ def create_application() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"]
     )
-
-    app.include_router(hello.router, prefix="/api/v1",tags=["home"])
+    app.include_router(hello.router, prefix="/api/v1", tags=["home"])
+    app.include_router(sport.router, prefix="/api/v1", tags=["sport"])
 
     return app
 
